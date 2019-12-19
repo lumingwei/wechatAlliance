@@ -69,7 +69,7 @@ class SaleFriendController extends Controller
 
         $qiNiuDomain = env('QI_NIU_DOMAIN');
         foreach ($attachments as &$attachment){
-            $imageInfo  = getimagesize($qiNiuDomain.'/'.$attachment);
+            $imageInfo  = getimagesize('http://'.$qiNiuDomain.'/'.$attachment);
             $attachment = [
                 'url'   => $attachment,
                 'width' => $imageInfo[0],
